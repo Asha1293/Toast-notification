@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+    background-color: #ebb6da;
+    
+}
+
+.buttons{
+    margin: 50px;
+}
+
+.buttons button{
+
+    border: 0;
+    outline: 0;
+    color: white;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.toastBox{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 20px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    overflow: hidden;
+}
+
+.toast-class{
+    height: 80px;
+    width: 400px;
+    background-color: white;
+    margin: 15px 0;
+    font-family: 500;
+    box-shadow: 0 0 20px rgba(0 ,0 ,0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+
+}
+
+@keyframes moveleft{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.toast-class i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+.toast-class.error i{
+    color: red;
+}
+
+.toast-class.invalid i{
+    color: orange;
+    
+}
+
+.toast-class::after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: green;
+    animation: anime 5s linear forwards;
+}
+
+@keyframes anime{
+    100%{
+        width: 0;
+    }
+}
+
+.toast-class.error::after{
+    background-color: red;
+}
+
+.toast-class.invalid::after{
+    background-color: orange;
+}
